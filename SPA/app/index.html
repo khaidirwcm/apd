@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+<head>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600,800,900" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+          integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script src="js/angular/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp" ng-controller="MainController">
+<div class="main">
+    <div class="container">
+        <div class="jumbotron home"></div>
+
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: -30px 0 30px 0;">
+            <a class="navbar-brand" href="#"><img src="img/apd.png"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item" ng-class="{active : homeMenu}" ng-click="toggleActive('homeMenu')">
+                        <a class="nav-link" href="#"><strong>HOME</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : portfolioMenu}" ng-click="toggleActive('portfolioMenu')">
+                        <a class="nav-link" href="#"><strong>PORTFOLIO</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : blogMenu}" ng-click="toggleActive('blogMenu')">
+                        <a class="nav-link" href="#"><strong>BLOG</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : pagesMenu}" ng-click="toggleActive('pagesMenu')">
+                        <a class="nav-link" href="#"><strong>PAGES</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : featuresMenu}" ng-click="toggleActive('featuresMenu')">
+                        <a class="nav-link" href="#"><strong>FEATURES</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : megaMenu}" ng-click="toggleActive('megaMenu')">
+                        <a class="nav-link" href="#"><strong>MEGA MENU</strong></a>
+                    </li>
+                    <li class="nav-item" ng-class="{active : contactMenu}" ng-click="toggleActive('contactMenu')">
+                        <a class="nav-link" href="#"><strong>CONTACT</strong></a>
+                    </li>
+                    <li class="nav-item" ng-click="toggleSearch()">
+                        <a class="nav-link" href="#"><img src="img/search.png"></a>
+                    </li>
+                </ul>
+                <div ng-class="{'searchOff': !searchFunctionOff}">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+
+        <!--What we offer-->
+        <div class="col-md-12 section" style="text-align: center">
+            <div class="subtitle"><h2><span>WHAT WE</span> <span style="color: #00A898;">OFFER</span></h2></div>
+            <div style="margin: 0 0 10px 0">We offer our customers the best services and solutions, this is our main
+                services list
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="imageOffer">
+                            <img src="img/responsive.png"><br>
+                        </div>
+                        <strong>RESPONSIVE AND MULTIPURPOSE</strong><br>
+                        Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.<span ng-show="responsiveOn">Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.</span><br>
+                        <button ng-show="!responsiveOn" ng-click="toggleResponsiveBlind()" class="btn btn-default offerButton">READ MORE
+                        </button>
+                        <button ng-show="responsiveOn"  ng-click="toggleResponsiveBlind()" class="btn btn-default offerButton">HIDE MORE
+                        </button>
+                    </div>
+                    <div class="col-sm">
+                        <div class="imageOffer">
+                            <img src="img/customization.png"><br>
+                        </div>
+                        <strong>EASY CUSTOMIZATION</strong><br>
+                        Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.<span ng-show="customizeOn">Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.</span><br>
+                        <button ng-show="!customizeOn" ng-click="toggleCustomizeBlind()" class="btn btn-success offerButtonMiddle">READ MORE
+                        </button>
+                        <button ng-show="customizeOn"  ng-click="toggleCustomizeBlind()" class="btn btn-success offerButtonMiddle">HIDE MORE
+                    </button>
+                    </div>
+                    <div class="col-sm">
+                        <div class="imageOffer">
+                            <img src="img/friendlySupport.png"><br>
+                        </div>
+                        <strong>AWESOME FRIENDLY SUPPORT</strong><br>
+                        Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.<span ng-show="supportOn">Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
+                        ornare quis.</span><br>
+                        <button ng-show="!supportOn" ng-click="toggleSupportBlind()" class="btn btn-default offerButton">READ MORE</button>
+                        <button ng-show="supportOn"  ng-click="toggleSupportBlind()" class="btn btn-default offerButton">HIDE MORE</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Our powerful skills-->
+        <div class="topIcon">
+            <i class="fa fa-2x fa-briefcase briefcaseIcon" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-12 section skillSection">
+            <div class="subtitleSkills"><h2><span>OUR POWERFULL </span> <span style="color: #00A898;">SKILLS</span></h2>
+            </div>
+            <div style="margin: 0 0 10px 0">We're good and experienced at different things and areas and we promise
+                about quality of our works
+            </div>
+            <div class="container">
+                <div class="row" style="padding: 20px 0 50px 0">
+                    <div class="col-2"><img style="width: 134px;" src="img/webDesign.png">WEB DESIGN</div>
+                    <div class="col-2"><img style="width: 134px;" src="img/webDevelopment.png">WEB DEVELOPMENT</div>
+                    <div class="col-2"><img style="width: 134px;" src="img/speedOptimization.png">SPEED OPTIMIZATION
+                    </div>
+                    <div class="col-2"><img style="width: 134px;" src="img/customerSupport.png">CUSTOMER SUPPORT</div>
+                    <div class="col-2"><img style="width: 134px;" src="img/marketing.png">MARKETING</div>
+                    <div class="col-2"><img style="width: 134px;" src="img/advertisement.png">ADVERTISEMENT</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Responsive and Multipurpose-->
+        <div class="col-md-12 section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4" style="margin: 0 0 10px 0;">
+                        <div class="col-12">
+                            <img src="img/responsive_multipurpose.png">
+                            <strong>RESPONSIVE AND MULTIPURPOSE</strong><br>
+                            <small>Desktops, Tablets & Phones</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12">
+                            <img src="img/easy_customization.png">
+                            <strong>EASY CUSTOMIZATION</strong><br>
+                            <small>One click Demo Content Installation</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12">
+                            <img src="img/unlimited_feature.png">
+                            <strong>UNLIMITED FEATURES</strong><br>
+                            <small>Shortcodes, Typography & Different Layouts</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12">
+                            <img src="img/clean.png">
+                            <strong>CLEAN & MODULAR CODING</strong><br>
+                            <small>100% Clean, Valid & Well-Commented Coding</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12">
+                            <img src="img/best_eCommerce.png">
+                            <strong>THE BEST E-COMMERCE SOLUTIONS</strong><br>
+                            <small>WooCommerce Fully Integration</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="col-12">
+                            <img src="img/friendly_support.png">
+                            <strong>AWESOME FRIENDLY SUPPORT</strong><br>
+                            <small>Free Lifetime Support & Updates</small>
+                            <br><br>
+                            Proin in magna a ipsum viverra scelerisque eunec turp. Nunc vestibulum fringilla accumsan.
+                            Praesent arcu turpis
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--View all works-->
+        <div class="col-md-12 section" style="text-align: center; background-color: #383838; color: white;">
+            <div class="container" style="padding: 50px;">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>ALEXIS SIMPSON</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">CEO & Developer</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            a.simpson@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>STEVEN COLE</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">User Interface Designer</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            s.cole@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>FRANCK PIENER</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">Sales Manager</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            f.piener@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>ASHLEY LENNON</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">IT Specialist</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            a.lennon@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                </div>
+                <div class="row" ng-show="allWorksOn">
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>MARTHA STEWART</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">IT Admin</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            m.stewart@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>AHMAD JOSEPH</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">Backen Developer</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            a.joseph@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>WILL BONY</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">Human Resource</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            w.bony@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="col-12 allWorksPhoto"></div>
+                        <div class="col-12 allWorksName">
+                            <button>ROBERT SWAZYKY</button>
+                        </div>
+                        <div class="col-12 allWorksDescription">
+                            <span style="border-bottom: solid thin">Finance Manager</span><br>
+                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
+                            r.swazyky@unique.com<br>
+                            <div class="fas fa-phone" style="margin-right: 5px"></div>
+                            +1 911(77)222-111
+                        </div>
+                    </div>
+                </div>
+                <button ng-show="!allWorksOn"  ng-click="toggleAllWorks()" type="button" class="col-12 btn btn-success allWorksButton">VIEW ALL
+                    WORKS
+                </button>
+                <button ng-show="allWorksOn" ng-click="toggleAllWorks()" type="button" class="col-12 btn btn-success allWorksButton">HIDE ALL
+                    WORKS
+                </button>
+            </div>
+        </div>
+
+        <!--Forms-->
+        <div class="col-md-11 section" style="margin: auto; margin-bottom: 15px;">
+            <h2 style="color: #00A898; font-style: italic">Register your interest</h2>
+            <div class="formSection">
+                <form class="formContent">
+                    <div class="container">
+                        <div class="row">
+                            <div class="form-group col-md-6" style="padding: 10px;">
+                                <input type="text" class="form-control" id="name" aria-describedby="nameHelp"
+                                       placeholder="Name">
+                            </div>
+                            <div class="form-group col-md-6" style="padding: 10px;">
+                                <select class="formControl occupationDropdown" ng-model="selectedOption">
+                                    <option value="" disabled selected>Occupation</option>
+                                    <option>{{occupation[0]}}</option>
+                                    <option>{{occupation[1]}}</option>
+                                    <option>{{occupation[2]}}</option>
+                                    <option>{{occupation[3]}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6" style="padding: 10px;">
+                                <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
+                                       placeholder="Email Address">
+                            </div>
+                            <div class="form-group col-md-6" style="padding: 10px;">
+                                <input type="tel" class="form-control" id="contact" aria-describedby="contactHelp"
+                                       placeholder="Contact No">
+                            </div>
+                            <div class="form-group col-md-6" style="padding: 10px;">
+                                <textarea type="text" class="form-control" id="message" aria-describedby="messageHelp"
+                                          placeholder="Message.."></textarea>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="col-md-4">
+                                <button type="submit" class="btn btn-success registerButton">SUBMIT MESSAGE</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--Quotes-->
+        <div class="topQuoteIcon">
+            <i class="fa fa-quote-left quoteIcon" aria-hidden="true"></i>
+        </div>
+        <div class="col-md-12 section quotesSection">
+            <div class="slideshow-container">
+
+                <div class="myQuotes">
+                    <div class="quotesName"><span class="author">ALEXIS SIMPSON</span> <span style="font-style: italic;"
+                                                                                             class="position"> - CEO & Developer</span>
+                    </div>
+                    <br>
+                    <q>Lorem ipsum dolor sit amet,laudantium, totam rem. Morbi sagittis, sem quis lacinia faucibus, orci
+                        ipsum gravida tortor, vel interdum mi sapien ut justo consequat magna, id molestie ipsum
+                        volutpat quis.</q>
+                </div>
+
+                <div class="myQuotes">
+                    <div class="quotesName"><span class="author">STEVEN COLE</span> <span style="font-style: italic;"
+                                                                                          class="position"> - User Interface Designer</span>
+                    </div>
+                    <br>
+                    <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip ex ea commodo consequat.</q>
+                </div>
+
+                <div class="myQuotes">
+                    <div class="quotesName"><span class="author">FRANCK PIENER</span> <span style="font-style: italic;"
+                                                                                            class="position"> - Sales Manager</span>
+                    </div>
+                    <br>
+                    <q>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                        deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non
+                        provident</q>
+                </div>
+                <div class="prevNext">
+                    <a class="prev" ng-click="plusSlides(-1)"><i class="fas fa-caret-square-left"></i></a>
+                    <a class="next" ng-click="plusSlides(1)"><i class="fas fa-caret-square-right"></i></a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--Carousel-->
+        <div class="col-md-12 carousel">
+            <div class="container" style="margin-left: 30px;">
+                <div class="row">
+                    <div class="myProducts col-3">
+                        <img style="width: 200px;" src="img/scenthound.png">
+                    </div>
+                    <div class="myProducts col-3">
+                        <img style="width: 200px;" src="img/vividways.png">
+                    </div>
+                    <div class="myProducts col-3">
+                        <img style="width: 200px;" src="img/hobnob.png">
+                    </div>
+                    <div class="myProducts col-3">
+                        <img style="width: 200px;" src="img/burnabox.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Footer-->
+<div class="footer-copyright text-center py-3 pageFooter">
+    Copyright © 2017 APD Digital Services Sdn Bhd, All Rights Reserved
+</div>
+
+<!-- Modules -->
+<script src="js/app.js"></script>
+
+<!-- Controllers -->
+<script src="js/controllers/MainController.js"></script>
+</body>
+</html>
