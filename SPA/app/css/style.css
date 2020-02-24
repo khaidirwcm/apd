@@ -249,8 +249,5 @@ q {
 /*--------------- Footer --------------------------*/
 
 .pageFooter {
-    color: white;
-    background-color: #0f0f0f;
-    width: 1110px;
-    margin-left: 397px;
+    text-align: center;
 }
