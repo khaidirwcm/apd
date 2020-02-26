@@ -2,7 +2,6 @@ app.controller('MainController', ['$scope', function ($scope) {
     $scope.showSlides = function (n) {
         var i;
         var slides = document.getElementsByClassName("myQuotes");
-        var productSlides = document.getElementsByClassName("myProducts");
         if (n > slides.length) {
             slideIndex = 1
         }
@@ -65,4 +64,15 @@ app.controller('MainController', ['$scope', function ($scope) {
     };
 
     $scope.occupation = ['Doctor', 'Engineer', 'Teacher', 'Developer'];
+
+    $scope.formName = '';
+    $scope.formEmail = '';
+    $scope.selectedOption = '';
+    $scope.formContact = '';
+    $scope.formMessage = '';
+    $scope.triggerMailto = function () {
+        window.location.href = "mailto:khaidir.azman83@gmail.com?subject=Register%20Your%20Interest&body=Name:%20" + $scope.formName
+            + "%0D%0AEmail:%20" + $scope.formEmail + "%0D%0AOccupation:%20" + $scope.selectedOption + "%0D%0AContact%20No:%20"
+            + $scope.formContact + "%0D%0A%0D%0A" + $scope.formMessage;
+    };
 }]);
