@@ -8,56 +8,62 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
           integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <script src="js/angular/angular.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </head>
 <body ng-app="myApp" ng-controller="MainController">
 <div class="main">
     <div class="container">
-        <div class="jumbotron home"></div>
+        <div class="row" style="height: 500px;margin-bottom: -26px">
+            <div class="col-md-12 home"></div>
+        </div>
 
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin: -30px 0 30px 0;">
-            <a class="navbar-brand" href="#"><img src="img/apd.png"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-12">
+                <a class="navbar-brand" href="#"><img src="img/apd.png"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item" ng-class="{active : homeMenu}" ng-click="toggleActive('homeMenu')">
-                        <a class="nav-link" href="#"><strong>HOME</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : portfolioMenu}" ng-click="toggleActive('portfolioMenu')">
-                        <a class="nav-link" href="#"><strong>PORTFOLIO</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : blogMenu}" ng-click="toggleActive('blogMenu')">
-                        <a class="nav-link" href="#"><strong>BLOG</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : pagesMenu}" ng-click="toggleActive('pagesMenu')">
-                        <a class="nav-link" href="#"><strong>PAGES</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : featuresMenu}" ng-click="toggleActive('featuresMenu')">
-                        <a class="nav-link" href="#"><strong>FEATURES</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : megaMenu}" ng-click="toggleActive('megaMenu')">
-                        <a class="nav-link" href="#"><strong>MEGA MENU</strong></a>
-                    </li>
-                    <li class="nav-item" ng-class="{active : contactMenu}" ng-click="toggleActive('contactMenu')">
-                        <a class="nav-link" href="#"><strong>CONTACT</strong></a>
-                    </li>
-                    <li class="nav-item" ng-click="toggleSearch()">
-                        <a class="nav-link" href="#"><img src="img/search.png"></a>
-                    </li>
-                </ul>
-                <div ng-class="{'searchOff': !searchFunctionOff}">
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item" ng-class="{active : homeMenu}" ng-click="toggleActive('homeMenu')">
+                            <a class="nav-link" href="#"><strong>HOME</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : portfolioMenu}" ng-click="toggleActive('portfolioMenu')">
+                            <a class="nav-link" href="#"><strong>PORTFOLIO</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : blogMenu}" ng-click="toggleActive('blogMenu')">
+                            <a class="nav-link" href="#"><strong>BLOG</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : pagesMenu}" ng-click="toggleActive('pagesMenu')">
+                            <a class="nav-link" href="#"><strong>PAGES</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : featuresMenu}" ng-click="toggleActive('featuresMenu')">
+                            <a class="nav-link" href="#"><strong>FEATURES</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : megaMenu}" ng-click="toggleActive('megaMenu')">
+                            <a class="nav-link" href="#"><strong>MEGA MENU</strong></a>
+                        </li>
+                        <li class="nav-item" ng-class="{active : contactMenu}" ng-click="toggleActive('contactMenu')">
+                            <a class="nav-link" href="#"><strong>CONTACT</strong></a>
+                        </li>
+                        <li class="nav-item" ng-click="toggleSearch()">
+                            <a class="nav-link" href="#"><img src="img/search.png"></a>
+                        </li>
+                    </ul>
+                    <div ng-class="{'searchOff': !searchFunctionOff}">
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
 
         <!--What we offer-->
         <div class="col-md-12 section" style="text-align: center">
@@ -95,7 +101,7 @@
                         <div class="imageOffer">
                             <img src="img/customization.png"><br>
                         </div>
-                        <strong>EASY CUSTOMIZATION</strong><br>
+                        <strong>EASY CUSTOMIZATION</strong><br><div class="easyCustomizationTitle"></div>
                         Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
                         ornare quis.<span ng-show="customizeOn">Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
                         ornare quis.Proin in magna a ipsum viverra scelerisq enec turp. Nunc vestibulum fringilla accumsan
@@ -147,20 +153,20 @@
             <i class="fa fa-2x fa-briefcase briefcaseIcon" aria-hidden="true"></i>
         </div>
         <div class="col-md-12 section skillSection">
-            <div class="subtitleSkills"><h2><span>OUR POWERFULL </span> <span style="color: #00A898;">SKILLS</span></h2>
+            <div class="subtitleSkills"><h2><span>OUR POWERFUL </span> <span style="color: #00A898;">SKILLS</span></h2>
             </div>
             <div style="margin: 0 0 10px 0">We're good and experienced at different things and areas and we promise
                 about quality of our works
             </div>
             <div class="container">
                 <div class="row" style="padding: 20px 0 50px 0">
-                    <div class="col-2"><img style="width: 134px;" src="img/webDesign.png">WEB DESIGN</div>
-                    <div class="col-2"><img style="width: 134px;" src="img/webDevelopment.png">WEB DEVELOPMENT</div>
-                    <div class="col-2"><img style="width: 134px;" src="img/speedOptimization.png">SPEED OPTIMIZATION
+                    <div class="col-2"><img class="skillsImage" style="margin-top: -4px;" src="img/webDesign.png">WEB DESIGN</div>
+                    <div class="col-2"><img class="skillsImage" src="img/webDevelopment.png">WEB DEVELOPMENT</div>
+                    <div class="col-2"><img class="skillsImage" src="img/speedOptimization.png">SPEED OPTIMIZATION
                     </div>
-                    <div class="col-2"><img style="width: 134px;" src="img/customerSupport.png">CUSTOMER SUPPORT</div>
-                    <div class="col-2"><img style="width: 134px;" src="img/marketing.png">MARKETING</div>
-                    <div class="col-2"><img style="width: 134px;" src="img/advertisement.png">ADVERTISEMENT</div>
+                    <div class="col-2"><img class="skillsImage" src="img/customerSupport.png">CUSTOMER SUPPORT</div>
+                    <div class="col-2"><img class="skillsImage" src="img/marketing.png">MARKETING</div>
+                    <div class="col-2"><img class="skillsImage"  style="margin-top: -4px;" src="img/advertisement.png">ADVERTISEMENT</div>
                 </div>
             </div>
 
@@ -244,11 +250,17 @@
                             <button>ALEXIS SIMPSON</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">CEO & Developer</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            a.simpson@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">CEO & Developer</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                a.simpson@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -257,11 +269,17 @@
                             <button>STEVEN COLE</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">User Interface Designer</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            s.cole@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">UI/UX Designer</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                s.cole@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -270,11 +288,17 @@
                             <button>FRANCK PIENER</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">Sales Manager</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            f.piener@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">Sales Manager</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                f.piener@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -283,11 +307,17 @@
                             <button>ASHLEY LENNON</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">IT Specialist</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            a.lennon@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">IT Specialist</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                a.lennon@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -298,11 +328,17 @@
                             <button>MARTHA STEWART</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">IT Admin</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            m.stewart@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">Solution Architect</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                m.stewart@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -311,11 +347,17 @@
                             <button>AHMAD JOSEPH</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">Backend Developer</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            a.joseph@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">Backend Developer</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                a.joseph@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -324,11 +366,17 @@
                             <button>WILL BONY</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">Human Resource</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            w.bony@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">Human Resource</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                w.bony@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                     <div class="col-3">
@@ -337,11 +385,17 @@
                             <button>ROBERT SWAZYKY</button>
                         </div>
                         <div class="col-12 allWorksDescription">
-                            <span style="border-bottom: solid thin">Finance Manager</span><br>
-                            <div class="fas fa-envelope" style="margin-right: 5px"></div>
-                            r.swazyky@unique.com<br>
-                            <div class="fas fa-phone" style="margin-right: 5px"></div>
-                            +1 911(77)222-111
+                            <div class="col-md-12 descriptionTitle">
+                                <span style="border-bottom: solid thin">Finance Manager</span>
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-envelope" style="margin-right: 5px"></i>
+                                r.swazyky@unique.com
+                            </div>
+                            <div class="descriptionEmail">
+                                <i class="fas fa-phone" style="margin-right: 5px"></i>
+                                +1911(77)222-111
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -369,7 +423,7 @@
                                        placeholder="Name">
                             </div>
                             <div class="form-group col-md-6" style="padding: 10px;">
-                                <select class="formControl occupationDropdown" ng-model="selectedOption">
+                                <select class="formControl occupationDropdown col-md-12" ng-model="selectedOption">
                                     <option value="" disabled selected>Occupation</option>
                                     <option>{{occupation[0]}}</option>
                                     <option>{{occupation[1]}}</option>
@@ -423,7 +477,7 @@
 
                 <div class="myQuotes">
                     <div class="quotesName"><span class="author">STEVEN COLE</span> <span style="font-style: italic;"
-                                                                                          class="position"> - User Interface Designer</span>
+                                                                                          class="position"> - UI/UX Designer</span>
                     </div>
                     <br>
                     <q>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -454,16 +508,16 @@
             <div class="container" style="margin-left: 30px;">
                 <div class="row">
                     <div class="myProducts col-3">
-                        <img style="width: 200px;" src="img/scenthound.png">
+                        <img class="productImage" src="img/scenthound.png">
                     </div>
                     <div class="myProducts col-3">
-                        <img style="width: 200px;" src="img/vividways.png">
+                        <img class="productImage" src="img/vividways.png">
                     </div>
                     <div class="myProducts col-3">
-                        <img style="width: 200px;" src="img/hobnob.png">
+                        <img class="productImage" src="img/hobnob.png">
                     </div>
                     <div class="myProducts col-3">
-                        <img style="width: 200px;" src="img/burnabox.png">
+                        <img class="productImage" src="img/burnabox.png">
                     </div>
                 </div>
             </div>
